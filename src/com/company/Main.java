@@ -16,7 +16,6 @@ public class Main {
         String answer;
 
         //Ask for user input
-
         //1. Add two numbers given by the user.
         System.out.print("Enter two numbers to add: ");
         num = input.nextInt();
@@ -69,6 +68,9 @@ public class Main {
         7. Count all words in the sentence:
         The dog jumped over the fence (use String.split(" ") method).
          */
+        String m = "The dog jumped over the fence";
+        System.out.print("\n\nIn the sentence: ' The dog jumped over the fence'");
+        System.out.println("\nThere are " + countWords(m) + " words");
 
         /*
         9. Print a 5 random numbers given a bound.
@@ -103,12 +105,20 @@ public class Main {
 
     public static void sortLetters(String a, String b, String c, String d,
                                    String e) {
+        String A, B, C, D, E;
+
+        A = a.toUpperCase();
+        B = b.toUpperCase();
+        C = c.toUpperCase();
+        D = d.toUpperCase();
+        E = e.toUpperCase();
+
         ArrayList<String> letters = new ArrayList<>();
-        letters.add(a);
-        letters.add(b);
-        letters.add(c);
-        letters.add(d);
-        letters.add(e);
+        letters.add(A);
+        letters.add(B);
+        letters.add(C);
+        letters.add(D);
+        letters.add(E);
 
         Collections.sort(letters);
         System.out.print(letters);
@@ -133,5 +143,13 @@ public class Main {
         Collections.shuffle(m);
         System.out.println(m.get(2));
     }
-}
+    public static int countWords(String m){
+        String wordSplit[] = m.split(" ");
+        return wordSplit.length;
+
+
+        }
+
+    }
+
 
