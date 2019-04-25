@@ -73,10 +73,19 @@ public class Main {
         /*
         9. Print a 5 random numbers given a bound.
          */
-        Random rdn = new Random();
-        System.out.print("Enter an upper limit for a random number: ");
+        System.out.print("\n\nEnter an upper limit for 5 random numbers: ");
+        randomGenerator(input.nextInt());
 
+        /*
+        10. Given the array list, print a random word from the list: (module, class, implement)
+         */
+        ArrayList<String> listKeywords = new ArrayList<>();
+        listKeywords.add("module");
+        listKeywords.add("class");
+        listKeywords.add("implement");
 
+        System.out.print("\n\nA random number from my arrayList is: " );
+        randomWord(listKeywords);
 
     }
 
@@ -110,6 +119,19 @@ public class Main {
     }
     public static double averageOfThree(double a, double b, double c){
         return ((a + b + c) / 3);
+    }
+    public static void randomGenerator(int bnd){
+        ArrayList<Integer>numbers = new ArrayList<>();
+        Random rnd = new Random();
+
+        for(int i= 0; i <5; i++){
+            numbers.add((rnd.nextInt(bnd))+1);
+        }
+        System.out.print(numbers);
+    }
+    public static void randomWord(ArrayList<String> m){
+        Collections.shuffle(m);
+        System.out.println(m.get(2));
     }
 }
 
